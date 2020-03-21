@@ -13,7 +13,7 @@ public interface UserDao {
 	
 	/**
 	 * 查询所有用户
-	 * @return
+	 * @return 返回一个装有所有用户的list
 	 */
 	public List<User> querryAllUser();
 	

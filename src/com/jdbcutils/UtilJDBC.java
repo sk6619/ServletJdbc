@@ -1,4 +1,4 @@
-package com.jdbc;
+package com.jdbcutils;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
