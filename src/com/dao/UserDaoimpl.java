@@ -37,6 +37,7 @@ public class UserDaoimpl implements UserDao{
 				user.setGenderString(set.getString("gender"));
 				list.add(user);
 			}
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
