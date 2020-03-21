@@ -22,7 +22,7 @@ public class UserDaoimpl implements UserDao{
 	
 	@Override
 	public List<User> querryAllUser() {
-		User user = new User();
+		User user;
 		String sql = "select id,name,age,gender from tb_test1";
 		ResultSet set;
 		try {
@@ -30,17 +30,17 @@ public class UserDaoimpl implements UserDao{
 			PreparedStatement statement = connection.prepareStatement(sql);
 			set = statement.executeQuery();
 			while(set.next()) {
-				user.setAgeInteger(set.getInt("id"));
+				user = new User();
+				user.setIdsInteger(set.getInt("id"));
 				user.setNameString(set.getString("name"));
 				user.setAgeInteger(set.getInt("age"));
-				user.setGenderString("gender");
+				user.setGenderString(set.getString("gender"));
 				list.add(user);
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;
 	}
-
+	
 }

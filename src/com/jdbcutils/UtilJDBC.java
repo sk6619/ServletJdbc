@@ -24,8 +24,10 @@ public class UtilJDBC {
 	static {
 		try {
 			Properties pro = new Properties();
+			String pathString = UtilJDBC.class.getClassLoader().
+					getResource("jdbc.properties").getPath();
 			//读取数据库配置文件
-			FileInputStream inStream = new FileInputStream("src/jdbc.properties");
+			FileInputStream inStream = new FileInputStream(pathString);
 			pro.load(inStream);
 			inStream.close();
 			user = pro.getProperty("user");
@@ -46,18 +48,4 @@ public class UtilJDBC {
 		return connection;
 	}
 	
-	
-	//测试连接是否可用
-	public static void main(String[] args) {
-		Connection connection;
-		try {
-			connection = UtilJDBC.getConnection();
-			if(connection != null) {
-				System.out.println("获取连接成功！！！！！！！！！！！！！");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
 }
