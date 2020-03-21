@@ -25,7 +25,7 @@ public class UtilJDBC {
 		try {
 			Properties pro = new Properties();
 			//读取数据库配置文件
-			FileInputStream inStream = new FileInputStream("jdbc.properties");
+			FileInputStream inStream = new FileInputStream("src/jdbc.properties");
 			pro.load(inStream);
 			inStream.close();
 			user = pro.getProperty("user");
@@ -44,6 +44,20 @@ public class UtilJDBC {
 			connection = DriverManager.getConnection(url, user, password);
 		}
 		return connection;
+	}
+	
+	
+	//测试连接是否可用
+	public static void main(String[] args) {
+		Connection connection;
+		try {
+			connection = UtilJDBC.getConnection();
+			if(connection != null) {
+				System.out.println("获取连接成功！！！！！！！！！！！！！");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
