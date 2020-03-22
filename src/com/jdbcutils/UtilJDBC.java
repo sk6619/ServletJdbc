@@ -41,7 +41,7 @@ public class UtilJDBC {
 	}
 	
 	//获取连接
-	public static Connection getConnection() throws SQLException {
+	public  static Connection getConnection() throws SQLException {
 		if(connection==null) {
 			connection = DriverManager.getConnection(url, user, password);
 		}

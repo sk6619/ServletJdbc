@@ -14,6 +14,7 @@ public class UserServiceImple  implements UserService{
 	@Override
 	public List<User> seleUsers() {
 		
+		
 		return userdao.querryAllUser();
 	}
 

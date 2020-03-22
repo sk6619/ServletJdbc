@@ -18,13 +18,14 @@ import com.jdbcutils.UtilJDBC;
  */
 public class UserDaoimpl implements UserDao{
 	
-	List<User> list = new ArrayList<>();
+	List<User> list;
 	
 	@Override
 	public List<User> querryAllUser() {
 		User user;
 		String sql = "select id,name,age,gender from tb_test1";
 		ResultSet set;
+		list = new ArrayList<>();
 		try {
 			Connection connection = UtilJDBC.getConnection();
 			PreparedStatement statement = connection.prepareStatement(sql);
@@ -37,7 +38,6 @@ public class UserDaoimpl implements UserDao{
 				user.setGenderString(set.getString("gender"));
 				list.add(user);
 			}
-		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
