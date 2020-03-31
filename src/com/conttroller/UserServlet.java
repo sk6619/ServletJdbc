@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.coyote.Request;
 
 import com.entity.User;
 import com.service.UserService;
@@ -34,6 +33,7 @@ public class UserServlet extends HttpServlet {
 		List<User> list = new ArrayList<>();
 		list = userService.seleUsers();
 		int size = list.size();
+		req.setAttribute("list", list);
 		PrintWriter outPrintWriter = resp.getWriter();
 		outPrintWriter.write("<table>");
 		outPrintWriter.write("<tr>");
