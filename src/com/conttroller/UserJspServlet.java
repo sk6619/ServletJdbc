@@ -27,6 +27,7 @@ public class UserJspServlet extends HttpServlet{
 		List<User> list = new ArrayList<>();
 		list = uService.seleUsers();
 		req.getSession().setAttribute("list", list);
+		//分发到index.jsp
 		req.getRequestDispatcher("index.jsp").forward(req, resp);
 	}
 
