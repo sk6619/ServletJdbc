@@ -21,7 +21,7 @@ public class DownloadServlet extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setCharacterEncoding("utf-8");
-		//接受传过来的下载路径
+		//接受传过来的下载路
 		String downpath = req.getParameter("downpath");
 		//获取文件名
 		String filename = req.getParameter("filename");
