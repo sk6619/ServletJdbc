@@ -13,7 +13,7 @@
 </form>
 <br><br>
 <form action="download" method="post">
-	文件存储路径：<input type="text" name="downpath"/>
+	<!-- 文件存储路径：<input type="text" name="downpath"/> -->
 	文件名：<input type="text" name="filename"/>
 	<input type="submit" value="点击下载文件到指定的文件夹"/>
 </form>
